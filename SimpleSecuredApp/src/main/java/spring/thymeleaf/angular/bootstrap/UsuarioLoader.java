@@ -35,11 +35,11 @@ public class UsuarioLoader implements ApplicationListener<ContextRefreshedEvent>
 		log.info("Saved Pablo - id: " + pablo.getId());
 
 		Usuario mariela = new Usuario();
-		pablo.setApellido("Stronati");
-		pablo.setNombre("Mariela Andrea");
-		pablo.setImageUrl(
+		mariela.setApellido("Stronati");
+		mariela.setNombre("Mariela Andrea");
+		mariela.setImageUrl(
 				"https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_shirt-rf412049699c14ba5b68bb1c09182bfa2_8nax2_512.jpg");
-		pablo.setUsuarioId("MAS");
+		mariela.setUsuarioId("MAS");
 		usuarioRepository.save(mariela);
 
 		log.info("Saved Mariela - id: " + mariela.getId());

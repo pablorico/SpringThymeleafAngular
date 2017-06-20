@@ -23,7 +23,7 @@ public class UsuarioController {
 	@RequestMapping("usuario/new")
 	public String newUsuario(Model model) {
 		model.addAttribute("usuario", new Usuario());
-		return "usuarioform";
+		return "UsuarioForm";
 	}
 
 	@RequestMapping(value = "usuario", method = RequestMethod.POST)
@@ -36,19 +36,19 @@ public class UsuarioController {
 	@RequestMapping("usuario/{id}")
 	public String showUsuario(@PathVariable Integer id, Model model) {
 		model.addAttribute("usuario", usuarioService.getUsuarioById(id));
-		return "usuarioshow";
+		return "UsuarioShow";
 	}
 
 	@RequestMapping(value = "/usuarios", method = RequestMethod.GET)
 	public String list(Model model) {
 		model.addAttribute("usuarios", usuarioService.listAllUsuarios());
-		return "usuarios";
+		return "Usuarios";
 	}
 
 	@RequestMapping("usuario/edit/{id}")
 	public String edit(@PathVariable Integer id, Model model) {
 		model.addAttribute("usuario", usuarioService.getUsuarioById(id));
-		return "usuarioform";
+		return "UsuarioForm";
 	}
 
 	@RequestMapping("usuario/delete/{id}")
