@@ -29,11 +29,11 @@
 					<td th:text="${usuario.apellido}">Apellido</td>
 					<td th:text="${usuario.nombre}">Nombre</td>
 					<td sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')"><a
-						th:href="${'/product/show/' + product.id}">Ver</a></td>
+						th:href="${'/usuario/show/' + usuario.id}">Ver</a></td>
 					<td sec:authorize="hasRole('ROLE_ADMIN')"><a
-						th:href="${'/product/edit/' + product.id}">Modificar</a></td>
+						th:href="${'/usuario/edit/' + usuario.id}">Modificar</a></td>
 					<td sec:authorize="hasRole('ROLE_ADMIN')"><a
-						th:href="${'/product/delete/' + product.id}">Eliminar</a></td>
+						th:href="${'/usuario/delete/' + usuario.id}">Eliminar</a></td>
 				</tr>
 			</table>
 
