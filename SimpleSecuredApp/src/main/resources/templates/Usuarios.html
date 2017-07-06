@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head lang="en">
 
 <title>Spring/Thymeleaf/Angular Simple Secured WebApp</title>
@@ -11,6 +11,16 @@
 	<div class="container">
 		<!--/*/ <th:block th:include="fragments/Header :: header"></th:block> /*/-->
 		<div th:if="${not #lists.isEmpty(usuarios)}">
+			<form th:action="@{/logout}" method="post">
+				<div class="col-sm-10">
+					<h2>ESTO NO VA</h2>
+				</div>
+				<div class="col-sm-2" style="padding-top: 30px;">
+					<span sec:authorize="isAuthenticated()"> <input
+						type="submit" value="Sign Out" />
+					</span>
+				</div>
+			</form>
 			<h2>Usuarios</h2>
 			<table class="table table-striped">
 				<tr>
